@@ -103,6 +103,6 @@ data = {
 }
 
 FILE = "data.pth"
-torch.save(FILE)
+torch.save(data, FILE)
 
 print(f'training complate. file save to {FILE}')
