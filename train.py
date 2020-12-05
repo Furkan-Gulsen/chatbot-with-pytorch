@@ -67,7 +67,7 @@ dataset = ChatDataset()
 train_loader = DataLoader(dataset= dataset, batch_size=batch_size, 
 	shuffle=True, num_workers=0)
 
-device = torch.device('cudo' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 # loss and optimizer
