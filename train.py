@@ -61,11 +61,11 @@ hidden_size = 8
 output_size = len(tags)
 learning_rate = 0.001
 num_epochs = 1000
-
+print(input_size, output_size)
 
 dataset = ChatDataset()
 train_loader = DataLoader(dataset= dataset, batch_size=batch_size, 
-	shuffle=True, num_workers=0)
+	shuffle=True, num_workers=2)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
@@ -89,6 +89,6 @@ for epoch in range(num_epochs):
 		optimizer.step()
 
 	if (epoch + 1) % 100 == 0:
-		print(f'epoch {epoch + 1}/{num_epochs}, loss={loss.item():.4f}')
+        print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
-print(f'final loss, loss={loss.item():.4f}')
+print(f'final loss: {loss.item():.4f}')
