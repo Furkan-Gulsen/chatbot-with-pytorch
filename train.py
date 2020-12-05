@@ -43,7 +43,7 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 class ChatDataset(Dataset):
-	def __init__(selff):
+	def __init__(self):
 		self.n_samples = len(X_train)
 		self.x_data = X_train
 		self.y_data = y_train
