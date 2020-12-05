@@ -11,12 +11,12 @@ class NeuralNet(nn.Module):
 
 	def forward(self, x):
 		# first layer
-		out = self.n1(x)
+		out = self.l1(x)
 		out = self.relu(out)
 		# second layer
-		out = self.n2(out)
+		out = self.l2(out)
 		out = self.relu(out)
 		# third layer
-		out = self.n3(out)
+		out = self.l3(out)
 		# no activation and no softmax
 		return out
